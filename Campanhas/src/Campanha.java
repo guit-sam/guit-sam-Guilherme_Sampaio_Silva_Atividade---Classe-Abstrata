@@ -1,12 +1,13 @@
+/// RA:10443768 Guilherme Sampaio Silva 
 import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Campanha {
-public String id;
-public String nome;
-public String descricao;
-public double orcamento; 
-private Map<String, Integer> metricas;
+protected String id;
+protected String nome;
+protected String descricao;
+protected double orcamento; 
+protected Map<String, Integer> metricas;
 
 public Campanha(String id, String nome, String descricao, double orcamento){
     this.id = id;
@@ -20,5 +21,7 @@ public void atualizarMetrica(String nomeMetrica, int valor) {
     metricas.put(nomeMetrica, valor);
 }
 
-public abstract void exibirCampanha();
+public abstract void avaliarCampanha();
+public abstract void configurar();
+public abstract void executar();
 }
